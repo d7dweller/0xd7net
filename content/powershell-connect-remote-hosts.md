@@ -91,4 +91,4 @@ _Note_: You must configure the remote system to allow connections, otherwise you
 _____
 Further Reading
 -----
-[WSMan PowerShell Documenation](https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7)
+[WSMan PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/module/microsoft.wsman.management/about/about_wsman_provider?view=powershell-7)

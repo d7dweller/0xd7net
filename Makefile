@@ -1,7 +1,10 @@
 PY?=python3
 PELICAN?=pelican
 PELICANOPTS=
-
+SSH_HOST=0xd7.net
+SSH_PORT=22
+SSH_USER=root
+SSH_TARGET_DIR=/var/www/localhost/htdocs/
 BASEDIR=$(CURDIR)
 INPUTDIR=$(BASEDIR)/content
 OUTPUTDIR=$(BASEDIR)/output
@@ -71,5 +74,7 @@ endif
 publish:
 	$(PELICAN) $(INPUTDIR) -o $(OUTPUTDIR) -s $(PUBLISHCONF) $(PELICANOPTS) -t $(THEME)
 
+ssh_upload: publish
+	        scp -P $(SSH_PORT) -r "$(OUTPUTDIR)"/* "$(SSH_USER)@$(SSH_HOST):$(SSH_TARGET_DIR)"
 
 .PHONY: html help clean regenerate serve serve-global devserver publish 
